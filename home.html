@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha38
+                           4-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity=
+               "sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div>
+<h4><strong>Login</strong></h4>
+ <form method="post" action="{{ url_for('signin') }}">
+            <input type="email" name="emailsignin" placeholder="Email" size="43" style="font-family: 'Lucida Fax';
+            font-size: 12pt;height: 30px; width: 300px" required>
+            <input type="password" name="passwordsignin" placeholder="Password" size="43"
+                   style="font-family: 'Lucida Fax';font-size: 12pt;height: 30px; width: 250px" required>
+            <button class="btn" type="submit" >Sign in</button>
+        </form>
+</div><br><br>
+
+{% if error %}
+        <p style="color: #9C1A1C">{{ error }}</p>
+    {% endif %}
+<div>
+    <h4><strong>Register</strong></h4>
+
+<form method="post" action="{{ url_for('home') }}">
+
+    <input type="text" name="name" placeholder="Full Name" size="33" style="font-family: 'Lucida Fax';font-size: 12pt;
+    height: 30px" required><br><br>
+    <input type="email" name="email" placeholder="Email" size="33" style="font-family: 'Lucida Fax';font-size: 12pt;
+    height: 30px" required><br><br>
+    <input type="password" name="password1" placeholder="Password" size="33" style="font-family: 'Lucida Fax';
+    font-size: 12pt;height: 30px" required><br><br>
+    <input type="password" name="password2" placeholder="Re-enter Password" size="33"
+           style="font-family: 'Lucida Fax';font-size: 12pt;height: 30px" required><br><br>
+
+    <input type="text" name="city" placeholder="City" size="23"
+           style="font-family: 'Lucida Fax';font-size: 12pt;height: 30px" required><br><br>
+
+    <input type="text" name="state" placeholder="State" size="23"
+           style="font-family: 'Lucida Fax';font-size: 12pt;height: 30px" required><br><br>
+
+    <input type="text" name="country" placeholder="Country" size="23"
+           style="font-family: 'Lucida Fax';font-size: 12pt;height: 30px"><br><br>
+    <button class="btn" type="submit">Sign Up!</button>
+    </form>
+</div>
+</body>
+
+</html>

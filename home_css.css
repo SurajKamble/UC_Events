@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 15px 10px 10px 5px;
+    width: 8%;
+    background-color: #f1f1f1;
+    height: 100%;
+    position: fixed;
+    overflow: auto;
+}
+.search{
+    position: fixed;
+    margin-left: 1050px;
+    float: right;
+}
+li button {
+    display: block;
+    color: #000;
+    padding: 8px 0 8px 8px;
+    text-decoration: none;
+
+}
+
+li button.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+li button:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}

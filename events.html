@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Events Lookup</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha38
+                           4-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity=
+               "sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/home_css.css">
+</head>
+<body style="font-family: Ubuntu, times new roman, times, roman, serif">
+    <ul>
+        {% for hall_name in hall_names %}
+           <li> <form method="GET" action="{{ url_for('hall_lookup', hall_name=hall_name) }}">
+            <button class="btn btn-sm" type="submit">
+                {{ hall_name }}
+            </button>
+
+            </form> </li>
+        {% endfor %}
+    </ul>
+
+    <div style="float: right; margin-top: 20px; margin-right: 30px">
+    <form method="post" action="{{ url_for('log_out') }}">
+        <button type="submit" class="btn">Log out</button>
+    </form>
+</div>
+<div style="font-family: Ubuntu, times new roman, times, roman, serif; margin-left:25%;padding:80px 16px;height:800px">
+    <h3>{{ hall_name }}</h3>
+<br>
+    {% if events %}
+    {% for event in events.keys() %}
+        <div>
+        <p><strong>Name</strong>: {{ event }}</p>
+        <p><strong>Location</strong>: {{ events[event][0] }}</p>
+        <p><strong>Date & Time</strong>: {{ events[event][1] }}</p>
+        </div>
+        <br><br>
+    {% endfor %}
+    {% endif %}
+</div>
+
+</body>
+</html>

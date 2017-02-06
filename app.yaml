@@ -1,0 +1,28 @@
+
+application: user-login-1234
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+
+handlers:
+
+- url: .*
+  script: main.app
+
+libraries:
+- name: webapp2
+  version: latest
+
+- name: MySQLdb
+  version: latest
+
+- name: lxml
+  version: latest
+
+env_variables:
+  CLOUD_SQL_IP: "173.194.238.206"
+  CLOUD_SQL_USER: "suraj"
+  CLOUD_SQL_PASS: "surajkamble"
+  CLOUD_SQL_INSTANCE_ID: "user-login"

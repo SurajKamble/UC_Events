@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to GITerest</title>
+    <link rel="shortcut icon" href="/static/css/icon.png" type="image/png">
+    <link rel="stylesheet" href="/static/css/home1_css.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/static/css/animate.css">
+</head>
+
+<body>
+
+<p>Welcome {{ name }}</p>
+
+<div>
+    <form method="post" action="{{ url_for('log_out') }}">
+        <button type="submit" class="btn">Log out</button>
+    </form>
+</div>
+</body>
+
+</html>

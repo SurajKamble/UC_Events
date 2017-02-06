@@ -1,0 +1,5 @@
+google
+bs4
+lxml
+
+Flask==0.10
